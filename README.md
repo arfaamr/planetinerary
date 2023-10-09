@@ -3,6 +3,6 @@
 <img src="api/static/title.png">
 
 A space travel itinerary web application for the NASA Space Apps 2023 Hackathon challenge: Planetary Tourism Office. Plan your next space adventure!
-Created by: Anika, Lamina, Lena, Hiba, Farzana, and Arfaa
+Created by: Hiba, Arfaa, Lamina, Anika, Lena, and Farzana
 
 [Check it out here!](https://www.planetinerary.co/)
