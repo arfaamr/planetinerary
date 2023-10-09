@@ -1,0 +1,189 @@
+* {
+    margin:0px;
+    padding:0px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+a{
+  color:#22184d;
+}
+a:hover {
+  color: #5044b6;
+}
+
+h1 {
+  color: #22184d;
+    font-weight: bold;
+    margin-top:50px;
+    padding-bottom:20px;
+    text-align: left;
+}
+
+p {
+  margin-right:150px;
+}
+
+.content h1 {
+    color: #22184d;
+    font-weight: bold;
+    text-align: left;
+    /* padding: 10px; */
+    padding-bottom: 50px;
+    margin-top: 30px;
+    /* margin-left: 0px; */
+    font-size: 60px;
+}
+
+.content {                  /* activity list style */
+  text-align: left;
+  margin-left: 0px;
+    /* margin-left: 50px; */
+    /* padding-left: 20px; */
+  }
+
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /*background-color: #352768;*/
+    background-color: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(130,0,255,1) 100%);
+    overflow-x: hidden;
+  }
+  
+  .sidenav h2 {
+    color: #d8c5f3;
+    font-size: 32px;
+    padding: 10px;
+    text-align: center;
+  }
+
+    /* !also not working .. */
+  .sidenav img{
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  /* Side navigation text styling */
+  .sidenav p {
+    color: #d8c5f3;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .sidenav hr {
+    border-color: #d8c5f3;
+    width: 85%;
+    margin-left: 22px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  #activitySplit{
+    border-color: #d8c5f3;
+    text-align: center;
+    margin-right: 40px;
+  }
+
+
+.container {
+    margin-right:0px;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px;
+
+}
+
+
+
+
+
+/*    ---checkbox----    [w3 schools]    */
+
+/* box for checkbox */
+.box {
+  padding-right:70px;
+  padding-bottom:55px;
+  float:right;
+  cursor: pointer;
+  transform : scale(2.5); 
+}
+
+/* hide browser's default check */
+.box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/*custom check */
+.check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* hover */
+.box:hover input ~ .check {
+  background-color: #d8c5f3;
+}
+
+/* checked */
+.box input:checked ~ .check {
+  background-color: #22184d;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.box input:checked ~ .check:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.box .check:after {
+  left: 10px;
+  top: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.done-button {
+  display: inline-block;
+  background-color: rgb(174, 108, 239); 
+  color: white; 
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.done-button:hover {
+  background-color: rgb(211, 169, 254); /* Change the background color on hover for a button effect */
+}
