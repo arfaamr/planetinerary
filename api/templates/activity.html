@@ -1,0 +1,27 @@
+
+<!-- HTML Page for activity details page -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} {{ activity['title'] }} {% endblock %} <img src="{{url_for('static',filename='logo_small.png')}}" alt="logo"></h1>
+    <p>{{ activity['content'] }}</p>
+
+    <img src="{{ url_for('static', filename=activity['image']) }}" alt="{{ activity['title'] }} Image" width="900" height="650">
+
+    <p> </p>
+
+    <br>
+
+    <!--? if mars, show mars pictures? -->
+    <div class="sidenav">
+        <img src="{{url_for('static',filename='mars.png')}}" alt="mars small image">
+        <h2> Mars </h2>
+        <hr>  
+        <p> Mars offers thrilling opportunities for bungee jumping, 
+          canyon walking, and a visit to the beloved Oppy Museum! </p>
+        <p> - a year on Mars is almost 2 years on Earth </p>
+        <p> - the avergage temp is -62.8°C </p>
+        <p> - it has 2 moons: Phobos & Deimos </p>
+      </div>
+{% endblock %}

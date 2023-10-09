@@ -1,0 +1,44 @@
+
+<!--choose activities page-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+  <h1>{% block title %} Plan Your Trip! {% endblock %} <img src="{{url_for('static',filename='logo_small.png')}}" alt="logo"></h1>
+  {% for activity in activities %}
+      <a href="{{ url_for('activity', activity_id=activity['id']) }}">
+          <h2>{{ activity['title'] }}</h2>
+      </a>
+
+      <form action={{ url_for("setAdded")}} method="POST" action="https://postman-echo.com/post">
+        <label class="box">
+          <input type="checkbox" id="checkbox" name={{ activity['id'] }} value={{ activity['id'] }} unchecked> 
+          <span class="check"></span>
+        </label>
+        <span class="badge badge-dark">{{ activity['time'] }}</span>
+        <hr id="activitySplit">
+  {% endfor %}
+  <br>
+  <input id="submitBox" type="submit" name="submit" value=" See Itinerary! "/>    <!--link to next pg here?-->
+  <br>
+  <br>
+  </form>
+
+  <img src="{{url_for('static',filename='mars_map.png')}}" alt="mars map">
+</div>
+
+<div class="sidenav">
+  <img src="{{url_for('static',filename='mars.png')}}" alt="mars small image">
+  <h2> Mars </h2>
+  <hr>  
+  <p> Mars offers thrilling opportunities for bungee jumping, 
+    canyon walking, and a visit to the beloved Oppy Museum! </p>
+  <p> - a year on Mars is almost 2 years on Earth </p>
+  <p> - the avergage temp is -62.8°C </p>
+  <p> - it has 2 moons: Phobos & Deimos </p>
+</div>
+
+    
+
+{% endblock %}

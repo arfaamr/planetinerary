@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html  xmlns="http://www.w3.org/1999/xhtml"  lang="en" xml:lang="en">
+
+<!-- the following is used for colouring and font style of headers, text and background -->
+
+<style>
+
+	body { /* main body text */
+		background: rgb(2,0,36);
+		background: linear-gradient(180deg, rgba(2,0,36,1) 18%, rgba(36,25,99,1) 50%, rgba(70,53,158,1) 73%, rgba(183,86,235,1) 99%);
+     	color: #e8ccf4;
+     	font-family: Arial, Verdana, sans-serif; 
+	}
+
+	h1 { /* used for headers/titles */
+		color: 01374f;
+		line-height: 100%;
+		font-family: "Lucida Console", "Courier New", monospace; 
+	}
+
+	.image-container { /* image container for the popup */
+        position: absolute;
+        display: inline-block;
+		margin-left: 75px;
+    }
+
+    .popup-text { /* information in popup */
+        display: none;
+        position: absolute;
+
+        background-color: rgba(2, 0, 36, 0.5);
+
+        padding: 10px;
+        border: 0.5px solid #000000;
+
+        top: 100%;
+        left: 0;
+        width: 1300px;
+
+		font-family: "Lucida Console", "Courier New", monospace; 
+    	color: #ffffff;
+    }
+
+</style>
+
+<script> /* used for the popup with a small description of each planet (this is JS) */
+
+	document.addEventListener('DOMContentLoaded', () => {
+    	const containers = document.querySelectorAll('.image-container');
+
+    	containers.forEach(container => {
+        	const popupText = container.querySelector('.popup-text');
+        	const area = container.querySelector('area');
+
+        	area.addEventListener('mouseover', () => {
+            	popupText.style.display = 'block';
+        	});
+
+        	area.addEventListener('mouseout', () => {
+            	popupText.style.display = 'none';
+        	});
+    	});
+	});
+
+</script>
+
+<!-- the head (what is visible at the top of the tab page) -->
+
+<head>
+
+	<title>Planetinerary</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+</head>
+
+<!-- the body (everything visible to user) -->
+
+<body>
+
+	<center><img src="static/title.png" alt="Title" width="100%" height="450"/></center> 
+
+	<br>
+	<br>
+	
+	<center><h1>Plan your next space adventure!</h1></center> <!-- little message for users -->
+	
+	<br>
+
+	<center><img src="static/planets.png" alt="Planets" width="1300" height="160" usemap="#workmap"></center>
+
+	<br>
+
+	<map name="workmap"> <!-- clickable image map for each planet with popups (currently only mars works)-->
+
+		<div class="image-container">
+			<area shape="rect" coords="15, 15, 130, 140" id="Jupiter">
+			<div class="popup-text">Jupiter: <blockquote></blockquote>
+				The largest planet in our Solar System, visit Jupiter
+				for a glimpse of a swirling vortex called “The Great Red Spot” and take a
+				stroll on Jupiter’s gas surface by wearing our GasMaster 2000 boots.</div>
+		</div>
+
+		<div class="image-container">
+			<area shape="rect" coords="175, 15, 290, 140" id="Mercury">
+			<div class="popup-text">Mercury: <blockquote></blockquote>
+				The smallest planet in our Solar System, take a close
+				look at the Sun by visiting this crater-riddled planet.</div>
+		</div>
+
+		<div class="image-container">
+			<area shape="rect" coords="325, 15, 440, 140" id="Neptune">
+			<div class="popup-text">Neptune: <blockquote></blockquote>
+				Take a swim in Neptune's icy waters by visiting this rich 
+				(seriously, it rains diamonds), blue planet.</div>
+		</div>
+
+		<div class="image-container">
+			<area shape="rect" coords="475, 15, 760, 140" id="Saturn">
+			<div class="popup-text">Saturn: <blockquote></blockquote>
+				Get a tour of Saturn by taking a 30-year ride 
+				on one of the it's show-stopping rings!</div>
+		</div>
+
+		<div class="image-container">
+			<area shape="rect" coords="795, 15, 930, 140" id="Uranus" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+			<div class="popup-text">Uranus: <blockquote></blockquote>
+				The only planet with it's poles on it's side, 
+				visit Uranus for a chance to win our 
+				once-in-a-lifetime “Catch a Diamond” event!</div>
+		</div>
+
+		<div class="image-container">
+			<area shape="rect" coords="1005, 15, 1120, 140" id="Venus">
+			<div class="popup-text">Venus: <blockquote></blockquote>
+				The hottest planet in our Solar System, 
+				if you're looking for a warm retreat that Florida just can't satisfy, 
+				Venus is the place to go with our Heat Resistant CryoSuit 5000!</div>
+		</div>
+
+		<div class="image-container">
+			<area shape="rect" coords="1155, 15, 1270, 140" id="Mars" href="{{ url_for('mars') }}">
+			<div class="popup-text">Mars: <blockquote></blockquote>
+				With its striking red color and the distinction of 
+				hosting the largest volcano in the Solar System, 
+				Mars offers thrilling opportunities for bungee jumping, 
+				canyon walking, and a visit to the beloved Oppy Museum! </div>
+		</div>
+
+	</map>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<a href="#top">Back to top</a> <!-- back to top internal link-->
+	<p>Created by: Hiba, Arfaa, Lamina, Anika, Lena, Farzana</p> <!-- showcasing the names of the creators -->
+	
+</body>
+
+</html>

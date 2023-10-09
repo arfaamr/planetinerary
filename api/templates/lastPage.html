@@ -1,0 +1,106 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <title>Thank You | Planetinerary</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+<style>
+    * {
+        margin:0px;
+        padding:0px;
+        font-family: "Lucida Console", "Courier New", monospace;
+    }
+
+    body {
+        background: url(../static/background.jpeg);
+        background-size: cover;
+    }
+
+    h1,
+    h2 {
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-shadow: 3px 2px 1px black;
+    }
+
+    h1 {
+        color: rgb(174, 108, 239);
+        font-size: 500%;
+        margin-bottom: 10px;
+        margin-top: 0px;
+    }
+
+    h2 {
+        color: #e8ccf4;
+        font-size: 200%
+    }
+
+    div#planet{
+        position: absolute;
+        left: 5%;
+        top: 10%;
+        width: 85%;
+    }
+
+    div#thanks {
+        top: 50%;
+        transform: translate(0, -50%);
+        position: absolute;
+        margin: auto;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    img {
+        width: 15%;
+    }
+
+    div#logo{
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: 5%;
+        text-align: center;
+    }
+
+    .done-button {
+        display: inline-block;
+        background-color: rgb(174, 108, 239); 
+        color: white; 
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+    }
+
+.done-button:hover {
+  background-color: rgb(211, 169, 254); /* Change the background color on hover for a button effect */
+}
+</style>
+
+<body>
+
+    <div id="thanks">
+        <!-- <div id="thanks"> -->
+            <h1>THANK YOU</h1>
+            <h2>Enjoy your trip!</h2>
+        <!-- </div> -->
+    </div>
+
+    <div id="logo"><img src="static/logo_small.png"/></div>
+    <div class="done-button">
+        <a href="{{ url_for('index') }}">Home</a>
+      </div>
+
+</body>
