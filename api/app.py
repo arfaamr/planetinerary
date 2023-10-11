@@ -15,9 +15,8 @@ def get_activity(activity_id):
         abort(404)
     return activity
 
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your secret key'
+app.config['SECRET_KEY'] = 'your secret key'        #! FIXME: actually gen secretkey lol
 
 @app.route('/')
 def index():
@@ -55,7 +54,6 @@ def lastPage():
     return render_template('lastPage.html',activities=activities)
 
 
-#! HIBO ADD THIS WHOLE FUNCTION!!
 #set "added" attribute of activity to true after clicking checkbox
 @app.route('/mars_itinerary', methods =["GET", "POST"])
 def setAdded():
@@ -75,12 +73,7 @@ def setAdded():
         else:
             cur.execute("UPDATE activities SET added=False WHERE id = ?", (i,))
 
-
-
-    #checking if it worked
     activities = cur.execute('SELECT * FROM activities').fetchall()
-    #for activity in activities:
-    #    print(activity['added'])
 
     conn.commit() 
     conn.close()   

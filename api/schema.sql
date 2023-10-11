@@ -6,5 +6,5 @@ CREATE TABLE activities (
     content TEXT NOT NULL,
     time TEXT NOT NULL,
     image TEXT NOT NULL,
-    added BOOLEAN NOT NULL
+    added BOOLEAN NOT NULL                      /*if activity selected by user or not*/
 );
